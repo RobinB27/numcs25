@@ -15,7 +15,6 @@ def divdiff_seq(x: np.ndarray, y: np.ndarray):
         # Must loop down, since we need the previous z[j-1]
         for j in range(n-1, i-1, -1):   
             z[j] = (z[j] - z[j-1]) / (x[j] - x[j-i])
-    
     return z
 
 
