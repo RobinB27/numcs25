@@ -1,6 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
+"""
+    The Gibbs Phenomenon occurs when trying to approximate non-continuous functions, like step-functions.
+"""
+
 def exact_fourier(x: np.ndarray, N: int, a: float, b: float):
     """
         Exact fourier series over x for the characteristic function of [a,b] \subset (0,1)
