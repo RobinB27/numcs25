@@ -83,8 +83,8 @@ def convergence_analysis(a: float, b: float, f, df, n_eval: int, n_conv: int):
 f = lambda x: np.sin(2*np.pi*x)
 df = lambda x: (2*np.pi) * np.cos(2*np.pi*x)
 a, b = 0, 1         # eval_trig_poly_d1 needs to be updated to handle other intervals
-n_eval = 1000
-n_conv = 8
+n_eval = 10000
+n_conv = 12
 
 # Experiment runner
 
@@ -93,7 +93,7 @@ y = f(x)
 dy = df(x)
 
 norms_f, norms_df = convergence_analysis(a, b, f, df, n_eval, n_conv)
-t = np.arange(1, n_conv+1)
+t = 2**np.arange(1, n_conv+1)
 
 # Plotting
 
