@@ -2,18 +2,14 @@ import numpy as np
 import matplotlib.pyplot as plt
 
 def coeffs_monomial(x: np.ndarray, y: np.ndarray):
-    """
-        Simply solve Vandermonde matrix. This is very unstable.
-    """
+    """ Solve Vandermonde matrix for monomial coeffs (very unstable) """
     A = np.vander(x)
-    alpha = np.linalg.solve(A, y)
-    return alpha
+    coeffs = np.linalg.solve(A, y)
+    return coeffs
 
 
 def eval_horner(coeffs: np.ndarray, vals: np.ndarray):
-    """
-        Evaluate polynomial using Horner scheme
-    """
+    """ Evaluate polynomial using Horner scheme """
     ret = coeffs[0]
     for i in range(1, len(coeffs)): ret = vals * ret + coeffs[i]
     return ret

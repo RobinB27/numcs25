@@ -42,9 +42,7 @@ def weights_barycentric(x: np.ndarray):
 
 
 def eval_barycentric(w: np.ndarray, data: np.ndarray, y: np.ndarray, x: np.ndarray):
-    """
-        Sequentially, vectorizing the bary. formula is difficult
-    """
+    """  Sequentially calculate the barycentric formula """
     n = x.size
     tmp = np.ones(n)
     for i in range(n): tmp[i] = eval_barycentric_scalar(w, data, y, x[i])
@@ -52,9 +50,7 @@ def eval_barycentric(w: np.ndarray, data: np.ndarray, y: np.ndarray, x: np.ndarr
     
     
 def eval_barycentric_scalar(w: np.ndarray, data: np.ndarray, y: np.ndarray, x):
-    """
-        Barycentric interpolation formula for a single value x
-    """
+    """ Barycentric interpolation formula for a single value x """
     n = data.size;
     bottom = np.sum( w / (x - data) )
     top = np.sum( w / (x - data) * y)

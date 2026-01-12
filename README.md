@@ -7,4 +7,8 @@ Monomial, Newton, Lagrange, Chebyshev Bases
 ### Trigonometric Interpolation
 Trigonometric Basis, DFT, Filtering, Derivatives of Fourier Series, Gibbs, Power Spectrum
 ### Piecewise Interpolation
-Piecewise linear
+Piecewise linear, different Spline interpolators & derivatives
+### Quadrature
+Naive Riemann sum, basic rules
+### Miscellaneous
+Convergence orders

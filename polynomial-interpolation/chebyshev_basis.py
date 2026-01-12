@@ -3,9 +3,7 @@ import matplotlib.pyplot as plt
 import scipy.fft as fft
 
 def clenshaw(c: np.ndarray, x: np.ndarray):
-    """
-        Clenshaw backwards recursion to evaluate polynomial using chebyshev coeffs
-    """
+    """ Clenshaw algorithm to evaluate polynomial using chebyshev coeffs """
     n = c.size; m = x.size
     d = np.zeros((m, 3))    # Save vectors [curr, prev1, prev2] as matrix
     

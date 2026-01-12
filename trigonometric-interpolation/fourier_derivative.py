@@ -7,42 +7,33 @@ import matplotlib.pyplot as plt
 """
 
 def zero_pad(v: np.ndarray, N: int):
-    """
-        Apply zero-padding to size N to a vector v
-    """
+    """Apply zero-padding to size N to a vector v """
     n = v.size
     if (N < n): raise ValueError(f"ERROR: Zeropadding for N smaller than vector length: {N} < {n}")
     
     u = np.zeros(N, dtype=complex)
     u[:n//2] = v[:n//2]
     u[N-n//2:] = v[n//2:]
-    
     return u
 
 
 def eval_trig_poly(y: np.ndarray, N: int):
-    """
-        Evaluate trig poly generated using y on N points
-    """
+    """ Evaluate trig poly generated using y on N points """
     n = y.size
     if (n % 2 != 0): raise ValueError(f"ERROR: y must be of even length, len(y)={n}")
     
     coeffs = np.fft.fft(y) * 1/n
-    
     coeffs = zero_pad(coeffs, N)
     return np.fft.ifft(coeffs) * N
 
 
 def eval_trig_poly_d1(y: np.ndarray, N: int):
-    """
-        Evaluates first der. of trig poly generated using y on N points
-    """
+    """ Evaluates first der. of trig poly generated using y on N points """
     n = y.size
     if (n % 2 != 0): raise ValueError(f"ERROR: y must be of even length, len(y)={n}")
     
     coeffs = np.fft.fft(y) * 1/n
     
-    # Apply derivation trick for trig. poly
     for i in range(0, n//2):
         coeffs[i] *= (2.0j * np.pi * i)
     for i in range(n//2, n):
