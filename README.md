@@ -9,6 +9,6 @@ Trigonometric Basis, DFT, Filtering, Derivatives of Fourier Series, Gibbs, Power
 ### Piecewise Interpolation
 Piecewise linear, different Spline interpolators & derivatives
 ### Quadrature
-Naive Riemann sum, basic rules
+Naive Riemann sum, basic rules, Gauss Quadrature
 ### Miscellaneous
 Convergence orders
