@@ -8,7 +8,7 @@ import scipy
 """
 
 def gauss_quad(n: int):
-    """ Computes nodes & weights for Gauss Quadrature (Golub & Welsh)"""
+    """ Computes nodes & weights for Gauss Quadrature (Golub & Welsh) """
     i = np.arange(1, n)
     b = i / np.sqrt(4*i**2 - 1)
     J = np.diag(b, -1) + np.diag(b, 1)  # Symmetric Matrix
@@ -22,6 +22,7 @@ def simpson(f, a: float, b: float, N: int):
     x, h = np.linspace(a, b, 2*N+1, retstep=True)
     Q = h/3 * np.sum( f(x[:-2:2]) + 4*f(x[1:-1:2]) + f(x[2::2]) )
     return Q 
+
 
 # Parameters to set
 
@@ -40,11 +41,11 @@ Q_precise = scipy.integrate.quad(f, a, b)[0]
 for i, n_val in enumerate(n_vals):
     x, w = gauss_quad(n_val)
     Q_gauss = np.sum( f(x)*w )
-    Q_simp  = simpson(f, a, b, n_val)
+    Q_simp  = simpson( f, a, b, n_val )
     err_gauss[i] = np.abs( Q_precise - Q_gauss )
     err_simp[i]  = np.abs( Q_precise - Q_simp )
 
-p = np.polyfit(np.log(n_vals), np.log(err_gauss), 1)[0]
+p = np.polyfit(np.log(n_vals)[:15], np.log(err_gauss)[:15], 1)[0]
 p = np.abs( p )
 
 h2 = ( np.abs(a-b)/n_vals )**2
