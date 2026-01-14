@@ -2,6 +2,9 @@
 Code I wrote to review the concepts seen in my Numerics lecture in early 2026.
 
 ## Contents
+
+Every script contains some type of plot / visualization.
+
 ### Polynomial Interpolation
 - Monomial Basis
 - Newton Basis
@@ -16,7 +19,7 @@ Code I wrote to review the concepts seen in my Numerics lecture in early 2026.
 - Power Spectrum
 ### Piecewise Interpolation
 - Piecewise linear
-- different Spline interpolators & derivatives
+- Different Spline interpolators & derivatives
 ### Quadrature
 - Naive Riemann sum
 - Basic composite rules
@@ -26,8 +29,9 @@ Code I wrote to review the concepts seen in my Numerics lecture in early 2026.
 - Monte Carlo (high dim.)
 - TODO: Romberg
 - TODO: Variance control Monte Carlo
-### Finding Roots
--
+### Equation Solving
+- Iterative methods convergence
+- Basic methods: Bisection, Secant & Newton
 ### Curve Fitting
 -
 ### Linear Algebra
