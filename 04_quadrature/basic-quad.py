@@ -3,7 +3,7 @@ import matplotlib.pyplot as plt
 import scipy
 
 """
-    Convergence rates of 3 basic quadrature rules
+    Convergence rates of 3 basic quadrature rules on 1d functions
 """
 
 def midpoint(f, a: float, b: float, N: int):

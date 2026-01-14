@@ -3,12 +3,34 @@ Code I wrote to review the concepts seen in my Numerics lecture in early 2026.
 
 ## Contents
 ### Polynomial Interpolation
-Monomial, Newton, Lagrange, Chebyshev Bases
+- Monomial Basis
+- Newton Basis
+- Lagrange Basis
+- Chebyshev Basis
 ### Trigonometric Interpolation
-Trigonometric Basis, DFT, Filtering, Derivatives of Fourier Series, Gibbs, Power Spectrum
+- Trigonometric Basis
+- DFT
+- Filtering
+- Derivatives of Fourier Series
+- Gibbs Phenomenon
+- Power Spectrum
 ### Piecewise Interpolation
-Piecewise linear, different Spline interpolators & derivatives
+- Piecewise linear
+- different Spline interpolators & derivatives
 ### Quadrature
-Naive Riemann sum, basic rules, Gauss Quadrature (& variations), 2D quadrature
+- Naive Riemann sum
+- Basic composite rules
+- Gauss quad. (& variations)
+- 2D quadrature
+- Adaptive quadrature
+- Monte Carlo (high dim.)
+- TODO: Romberg
+- TODO: Variance control Monte Carlo
+### Finding Roots
+-
+### Curve Fitting
+-
+### Linear Algebra
+-
 ### Miscellaneous
-Convergence orders
+- Convergence orders
