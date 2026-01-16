@@ -38,6 +38,6 @@ Every script contains some type of plot / visualization.
 ### Curve Fitting
 -
 ### Linear Algebra
--
+- Gram-Schmidt algorithm
 ### Miscellaneous
 - Convergence orders
