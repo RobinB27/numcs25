@@ -51,7 +51,7 @@ def simpson_2d_weights(N: int):
 
 
 def simpson_2d_mesh(f, a: float, b: float, Nx: int, c: float, d: float, Ny: int):
-    """ Simpson rule on a 2d function via np.meshrgdi """
+    """ Simpson rule on a 2d function via np.meshgrid """
     x, hx = np.linspace(a, b, Nx+1, retstep=True)
     y, hy = np.linspace(c, d, Ny+1, retstep=True)
     
@@ -73,7 +73,7 @@ c, d = -1, 1
 N = 1000            
 n_max = 1000     # finest grid size to use, takes long to produce graph
 
-n_vals = np.arange(2, n_max, 2) # simpson needs even values
+n_vals = np.arange(2, n_max+1, 2) # simpson needs even values
 
 # Experiment Runner
 
@@ -91,7 +91,7 @@ for i, n in enumerate(n_vals):
     Q_simp = simpson_2d_mesh(f, a, b, n, c, d, n)
     err[0, i] = np.abs( Q_precise - Q_trap )
     err[1, i] = np.abs( Q_precise - Q_simp )
-print("Finished all quadratures")
+print(f"Finished all {len(n_vals)} quadratures")
 
 # Plotting
 

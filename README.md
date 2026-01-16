@@ -30,8 +30,11 @@ Every script contains some type of plot / visualization.
 - TODO: Romberg
 - TODO: Variance control Monte Carlo
 ### Equation Solving
-- Iterative methods convergence
+- Convergence of iterative methods
 - Basic methods: Bisection, Secant & Newton
+- Newton, 2-valued functions
+- Newton, dampened
+- Quasi-Newton (Broyden)
 ### Curve Fitting
 -
 ### Linear Algebra

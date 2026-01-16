@@ -11,8 +11,8 @@ def linear_convergence(x: float, n: int):
     """ Approximate x towards 0.5 using a trig. relation """
     y = []
     for k in range(n):  
-        x += ( np.cos(x)+1 ) / np.sin(x)
-        y += [x]
+        x += ( np.cos(x)+1 ) / np.sin(x)    # Converges to 0.5
+        y.append(x)
     
     err = np.abs( np.array(y) - x)
     rate = err[1:] / err[:-1]       # Approximate convergence rate
@@ -29,7 +29,7 @@ def approx_sqrt(a, x):
     while x_old != x:
         x_old = x
         x = 0.5 * (x + a/x)
-        vals += [x]
+        vals.append(x)
     
     err = np.abs( np.array(vals) - exact_sqrt )
     return err    
@@ -37,11 +37,11 @@ def approx_sqrt(a, x):
 
 # Parameters to set
 
-n = 20
+n = 20  # experiment count, lin. conv
 x_lin = [0.2, 0.5, 1, 10, 100, 1000, 10000, 100000]
 
-m = 20
-a = 2 
+m = 20  # experiment count, sqrt
+a = 2   # sqrt(a) will be approximated
 x_sqrt = [1.0, 1.4, 2.0, 10, 50, 100, 1000, 10000, 100000]
 
 # Experiment Runner
@@ -70,7 +70,7 @@ axs[0].grid()
 
 for i in range(len(x_sqrt)):
     axs[1].semilogy(np.arange(1, len(err_sqrt[i])+1), err_sqrt[i], label=f"x={x_sqrt[i]}")
-    axs[1].scatter(np.arange(1,len(err_sqrt[i])+1), err_sqrt[i])
+    axs[1].scatter( np.arange(1,len(err_sqrt[i])+1),  err_sqrt[i])
 
 axs[1].set_title("Square Root approx. convergence")
 axs[1].legend()

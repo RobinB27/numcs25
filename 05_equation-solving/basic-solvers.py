@@ -6,15 +6,12 @@ import scipy
     Bisection, Newton & Secant method for finding zeros to 1d function & Convergence plot
 """
 
+def sgn(x): return 1 if x >= 0 else -1
+
 def bisection_method(f, a: float, b: float, tol=1e-12, maxIter=100, results=None):
     """ Bisection method on f using initial bounds a,b """
     if a > b: a, b = b, a
-    fa = f(a); fb = f(b)
-    
-    if fa*fb > 0: raise ValueError("f(a) & f(b) must have different signs for bisection")
-    
-    sgn_fb = 1
-    if fa > 0: sgn_fb = -1
+    if sgn(f(a)) == sgn(f(b)): raise ValueError("f(a) & f(b) must have different signs for bisection")
     
     x = 0.5 * (a + b)
     if results is not None: results += [x]
@@ -22,7 +19,7 @@ def bisection_method(f, a: float, b: float, tol=1e-12, maxIter=100, results=None
     iter = 1
     while (b-a > tol and a<x and x<b and iter<maxIter):
         # Check on which side f(x) is, update bounds
-        if sgn_fb*f(x) > 0: b = x
+        if sgn(f(b))*f(x) > 0: b = x
         else:               a = x
         
         x = 0.5 * (a + b)
@@ -40,7 +37,7 @@ def newton_method(f, df, x: float, tol=1e-12, maxIter=100, results=None):
         x -= f(x)/df(x)
         if results is not None: results += [x]
         iter += 1
-    
+
     return x, iter
 
 
@@ -85,9 +82,9 @@ print("Scipy:\t", root.x[0], "\nBisect:\t", root_bis[0], "\nNewton:\t", root_new
 
 fig, ax = plt.subplots()
 
-ax.semilogy(np.arange(1, len(x_bis)+1), np.abs( x_bis - root.x[0]), label="Bisection")
+ax.semilogy(np.arange(1, len(x_bis)+1),  np.abs( x_bis - root.x[0]),  label="Bisection")
 ax.semilogy(np.arange(1, len(x_newt)+1), np.abs( x_newt - root.x[0]), label="Newton")
-ax.semilogy(np.arange(1, len(x_sec)+1), np.abs( x_sec - root.x[0]), label="Secant")
+ax.semilogy(np.arange(1, len(x_sec)+1),  np.abs( x_sec - root.x[0]),  label="Secant")
 
 title = "Convergence" if root.success else "Warning: Scipy didnt' converge"
 ax.set_title(title)
