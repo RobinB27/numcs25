@@ -36,8 +36,12 @@ Every script contains some type of plot / visualization.
 - Newton, dampened
 - Quasi-Newton (Broyden)
 ### Curve Fitting
--
+- Normal Equations (Linear)
+- Orthogonal methods (Linear)
+- Gauss-Newton & Newton (Non-linear)
 ### Linear Algebra
 - Gram-Schmidt algorithm
+- TODO: Householder, Givens
+- TODO: PCA
 ### Miscellaneous
 - Convergence orders
