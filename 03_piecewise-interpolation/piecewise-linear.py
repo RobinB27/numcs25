@@ -38,7 +38,7 @@ def eval_linear_interp(x: np.ndarray, x_data, y):
 
 f = lambda x: np.sin(x)     # Function to interpolate
 a, b = -10, 10              # Interval to interpolate on
-n = 20                      # Amount of sub-intervals (equal sizes)
+n = 10                      # Amount of sub-intervals (equal sizes)
 N = 1000                    # Points to use for plot
 
 # Experiment Runner

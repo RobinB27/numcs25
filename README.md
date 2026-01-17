@@ -27,7 +27,7 @@ Every script contains some type of plot / visualization.
 - 2D quadrature
 - Adaptive quadrature
 - Monte Carlo (high dim.)
-- TODO: Romberg
+- TODO: Romberg Scheme
 - TODO: Variance control Monte Carlo
 ### Equation Solving
 - Convergence of iterative methods
@@ -41,7 +41,8 @@ Every script contains some type of plot / visualization.
 - Gauss-Newton & Newton (Non-linear)
 ### Linear Algebra
 - Gram-Schmidt algorithm
+- Principal component analysis: signal recovery
+- Principal component analysis: image compression
 - TODO: Householder, Givens
-- TODO: PCA
 ### Miscellaneous
 - Convergence orders

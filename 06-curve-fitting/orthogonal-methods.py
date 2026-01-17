@@ -36,7 +36,6 @@ c = np.array([50, 20, 10])
 print("Condition of A:\t", np.linalg.cond(A))
 print("Condition of B:\t", np.linalg.cond(B))
 
-
 Q1, R1 = np.linalg.qr(A)
 x_qr = np.linalg.solve(R1, np.dot(Q1.T, b) )
 x_svd = least_squares_SVD(A, b)       
