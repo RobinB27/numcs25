@@ -9,6 +9,7 @@ Every script contains some type of plot / visualization.
 - Monomial Basis
 - Newton Basis
 - Lagrange Basis
+- Lagrange Polynomials
 - Chebyshev Basis
 ### Trigonometric Interpolation
 - Trigonometric Basis
