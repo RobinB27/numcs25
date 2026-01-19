@@ -47,3 +47,4 @@ Every script contains some type of plot / visualization.
 - TODO: Householder, Givens
 ### Miscellaneous
 - Convergence orders
+- Sympy basics

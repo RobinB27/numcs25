@@ -47,7 +47,7 @@ def f(x):
 dim = 4
 a = -np.ones(dim)
 b = +np.ones(dim)
-M = 100                     # Experiment count (M > 1), quickly takes long to run
+M = 100                          # Experiment count (M > 1), quickly takes long to run
 N_vals = 4*10**np.arange(1, 7)   # Sample counts
 
 # Experiment Runner
