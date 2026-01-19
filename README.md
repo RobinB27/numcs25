@@ -1,9 +1,9 @@
-# numcs25
-Code I wrote to review the concepts seen in my Numerics lecture in early 2026.
+# Numerical Methods for Computer Science (2025)
+Code examples for different methods I wrote as exam preparation for a course on numerical methods. 
+
+(Almost) Every script contains some plot/visualisation too.
 
 ## Contents
-
-Every script contains some type of plot / visualization.
 
 ### Polynomial Interpolation
 - Monomial Basis
